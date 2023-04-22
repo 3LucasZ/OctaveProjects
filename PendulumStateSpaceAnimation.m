@@ -30,14 +30,9 @@ axis tight equal;
 theta = 1;
 w = 0;
 tstep=0.05;
-tspan = 0:tstep:3;
+tspan = 0:tstep:100000;
 
 % animate
-function myfun(src,event)
-  disp(event.Key);
-end
-set(field,'KeyPressFcn',@myfun);
-
 hold on
 for tcur = tspan
   point = plot(theta,w,'bo');
