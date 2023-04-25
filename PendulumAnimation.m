@@ -30,10 +30,16 @@ axis tight equal;
 theta = 1;
 w = 0;
 tstep=0.05;
-tspan = 0:tstep:100000;
+tspan = 0:tstep:10;
 
 % animate
 hold on
+
+[ts,ys] = ode45(f,tspan,[theta;w]);
+plot(ys(:,1),ys(:,2))
+plot(ys(1,1),ys(1,2),'bo') % plot starting point as blue circle
+plot(ys(end,1),ys(end,2),'ks') % plot ending point as black square
+
 for tcur = tspan
   point = plot(theta,w,'bo');
 
