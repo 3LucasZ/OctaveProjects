@@ -19,6 +19,9 @@ speed = 1;
 state_step=0.01; % time per vector field
 anim_step=0.01; % time per frame
 
+h_f = 1;
+v_f = 0;
+
 % dyna var
 global V = 0;
 h = 0;
@@ -56,8 +59,18 @@ slider = uicontrol (
          'callback', {@update}
        );
 
+% plot goal
+hold on
+goal = plot(h_f,v_f,'ms','LineWidth',5);
+hold off
+
 % run animation
 for t=1:1000000
+  % update V
+  h_e = h_f - h;
+  v_e = v_f - v;
+  V = 10*h_e + 1*v_e;
+
   % update state_dot elevator equation
   f = @(t,h_) [h_(2); A*h_(2)+B*V];
 
