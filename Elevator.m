@@ -18,7 +18,7 @@ V = 5
 f = @(t,h) [h(2); A*h(2)+B*V];
 
 % plot frame
-grid_h = linspace(0,6,20);
+grid_h = linspace(0,1.5,20);
 grid_v = linspace(-2,2,20);
 [x,y] = meshgrid(grid_h,grid_v);
 
@@ -36,18 +36,18 @@ end
 quiver(x,y,u,v,'r'); figure(gcf)
 xlabel('height (h)')
 ylabel('velocity (v)')
-%axis tight equal;
+axis tight;
 
 % initial conditions
 h = 0;
 v = 0;
 
 % graph the solved equation
-tspan = [0,10]
-hold on
-[ts,ys] = ode45(f,tspan,[h;v]);
-plot(ys(:,1),ys(:,2))
-plot(ys(1,1),ys(1,2),'bo') % plot starting point as blue circle
-plot(ys(end,1),ys(end,2),'ks') % plot ending point as black square
-hold off
+##tspan = [0,10]
+##hold on
+##[ts,ys] = ode45(f,tspan,[h;v]);
+##plot(ys(:,1),ys(:,2))
+##plot(ys(1,1),ys(1,2),'bo') % plot starting point as blue circle
+##plot(ys(end,1),ys(end,2),'ks') % plot ending point as black square
+##hold off
 
