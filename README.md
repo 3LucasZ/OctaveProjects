@@ -7,5 +7,5 @@ My favorite one:
 * Voltage varies with slider
 * Voltage changes vector field that elevator is travelling in
 
-https://github.com/3LucasZ/OctaveProjects/assets/72239682/ed315bcc-39c8-4da8-94b8-0ce94961985b
+https://github.com/3LucasZ/OctaveProjects/assets/72239682/b1968f9f-f197-44ff-8941-78e2b6dc2d19
 
